@@ -29,42 +29,41 @@ class _MainLayoutState extends State<MainLayout> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-      ),
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        showUnselectedLabels: true,
-        selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.white,
-        // backgroundColor: Colors.grey,
-        currentIndex: _selectedIndex,
-        onTap: _onNavbarTapped,
-        items: const [
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(
-              Icons.home,
+    return SafeArea(
+      child: Scaffold(
+        body: _pages[_selectedIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.black,
+          showUnselectedLabels: true,
+          selectedItemColor: Colors.red,
+          unselectedItemColor: Colors.white,
+          // backgroundColor: Colors.grey,
+          currentIndex: _selectedIndex,
+          onTap: _onNavbarTapped,
+          items: const [
+            BottomNavigationBarItem(
+              backgroundColor: Colors.black,
+              icon: Icon(
+                Icons.home,
+              ),
+              label: 'Home',
             ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.soup_kitchen,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.soup_kitchen,
+              ),
+              label: 'Recomended meals',
             ),
-            label: 'Recomended meals',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.plus_one),
-            label: 'My meals',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
+            BottomNavigationBarItem(
+              icon: Icon(Icons.plus_one),
+              label: 'My meals',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
+        ),
       ),
     );
   }
